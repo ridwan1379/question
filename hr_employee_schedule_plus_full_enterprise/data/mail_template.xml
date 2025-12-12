@@ -1,0 +1,13 @@
+<odoo>
+    <record id="email_shift_assignment" model="mail.template">
+        <field name="name">Shift Assignment Notification</field>
+        <field name="email_from">${(object.company_id.email or 'noreply@company.com')}</field>
+        <field name="subject">Your Shift Has Been Updated</field>
+        <field name="model_id" ref="hr.model_hr_employee"/>
+        <field name="body_html"><![CDATA[
+            <p>Hello ${object.name},</p>
+            <p>Your shift has been updated to <b>${object.shift_type}</b>.</p>
+            <p>Current shift: ${object.current_shift_id.name}</p>
+        ]]></field>
+    </record>
+</odoo>

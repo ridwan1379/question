@@ -1,0 +1,12 @@
+<odoo>
+    <record id="ir_cron_auto_assign_shift" model="ir.cron">
+        <field name="name">Auto Assign Weekly Shift</field>
+        <field name="model_id" ref="hr.model_hr_employee"/>
+        <field name="state">code</field>
+        <field name="code">model.search([])._cron_auto_assign_shift()</field>
+        <field name="interval_type">weeks</field>
+        <field name="interval_number">1</field>
+        <field name="numbercall">-1</field>
+        <field name="active">True</field>
+    </record>
+</odoo>
