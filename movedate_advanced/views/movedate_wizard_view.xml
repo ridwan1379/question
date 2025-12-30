@@ -1,0 +1,23 @@
+<odoo>
+    <record id="view_movedate_wizard_form" model="ir.ui.view">
+        <field name="name">movedate.wizard.form</field>
+        <field name="model">movedate.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Move Date">
+                <group>
+                    <field name="new_date"/>
+                    <field name="reason"/>
+                </group>
+                <footer>
+                    <button name="action_apply"
+                            type="object"
+                            string="Apply"
+                            class="btn-primary"/>
+                    <button string="Cancel"
+                            class="btn-secondary"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

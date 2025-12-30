@@ -1,0 +1,9 @@
+<odoo>
+    <menuitem id="menu_movedate_root" name="Move Date"/>
+
+    <menuitem
+        id="menu_movedate_log"
+        name="Move Date Logs"
+        parent="menu_movedate_root"
+        action="action_movedate_log"/>
+</odoo>
