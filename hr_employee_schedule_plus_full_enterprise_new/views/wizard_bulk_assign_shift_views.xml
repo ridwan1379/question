@@ -1,0 +1,22 @@
+<odoo>
+    <record id="wizard_bulk_assign_shift_form" model="ir.ui.view">
+        <field name="name">wizard.bulk.assign.shift.form</field>
+        <field name="model">wizard.bulk.assign.shift</field>
+        <field name="arch" type="xml">
+            <form string="Bulk Assign Shift">
+                <group>
+                    <field name="shift_id"/>
+                    <field name="employee_ids" widget="many2many_tags"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="notify"/>
+                    <field name="force"/>
+                </group>
+                <footer>
+                    <button string="Apply" type="object" name="apply_shift" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

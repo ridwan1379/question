@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+
+        <record id="email_template_shift_update" model="mail.template">
+            <field name="name">Shift Update Notification</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="subject">Shift Baru Anda Mulai Minggu Depan</field>
+            <field name="email_from">${object.company_id.email or 'admin@example.com'}</field>
+            <field name="email_to">${object.work_email}</field>
+            <field name="email_cc">${object.parent_id.work_email}</field>
+            <field name="body_html">
+                <![CDATA[
+                    <p>Halo <b>${object.name}</b>,</p>
+                    <p>Shift anda untuk minggu depan telah diperbarui.</p>
+                    <p>Shift Baru: <b>${object.shift_type}</b></p>
+                    <br/>
+                    <p>Terima kasih.</p>
+                ]]>
+            </field>
+        </record>
+
+    </data>
+
+    <data>
+
+        <record id="email_template_shift_update" model="mail.template">
+            <field name="name">Shift Minggu Depan</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="subject">Update Shift Minggu Depan</field>
+            <field name="email_from">${object.company_id.email or 'info@example.com'}</field>
+            <field name="email_to">${object.work_email}</field>
+            <field name="email_cc">${object.parent_id.work_email}</field>
+
+            <field name="body_html">
+                <![CDATA[
+                    <p>Halo <b>${object.name}</b>,</p>
+                    <p>Shift Anda untuk minggu depan telah diperbarui.</p>
+
+                    <p><b>Shift Baru:</b> ${object.shift_type.name}</p>
+
+                    <p>Silakan cek Odoo Employee untuk detail lebih lengkap.</p>
+                    <br/>
+                    <p>Terima kasih.</p>
+                ]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

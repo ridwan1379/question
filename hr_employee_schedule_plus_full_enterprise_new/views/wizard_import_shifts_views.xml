@@ -1,0 +1,17 @@
+<odoo>
+    <record id="wizard_import_shifts_form" model="ir.ui.view">
+        <field name="name">wizard.import.shifts.form</field>
+        <field name="model">wizard.import.shifts</field>
+        <field name="arch" type="xml">
+            <form string="Import Shifts from CSV">
+                <group>
+                    <field name="file" filename="filename"/>
+                </group>
+                <footer>
+                    <button string="Import" type="object" name="action_import" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

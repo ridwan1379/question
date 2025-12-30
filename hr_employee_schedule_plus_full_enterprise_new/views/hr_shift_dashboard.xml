@@ -1,0 +1,18 @@
+<odoo>
+    <record id="board_action_1" model="ir.actions.act_window">
+        <field name="name">Schedule Dashboard</field>
+        <field name="res_model">hr.shift</field>
+        <field name="view_mode">kanban,graph,calendar</field>
+    </record>
+
+    <record id="view_hr_shift_graph" model="ir.ui.view">
+        <field name="name">hr.shift.graph</field>
+        <field name="model">hr.shift</field>
+        <field name="arch" type="xml">
+            <graph string="Shifts by Type">
+                <field name="shift_type" type="row"/>
+                <field name="id" type="measure"/>
+            </graph>
+        </field>
+    </record>
+</odoo>

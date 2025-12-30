@@ -1,0 +1,24 @@
+<odoo>
+    <record id="view_hr_shift_kanban" model="ir.ui.view">
+        <field name="name">hr.shift.kanban</field>
+        <field name="model">hr.shift</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_record_top">
+                                <strong><field name="name"/></strong>
+                            </div>
+                            <div class="o_kanban_record_bottom">
+                                <field name="shift_type"/>
+                                <div><field name="start_time"/> - <field name="end_time"/></div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

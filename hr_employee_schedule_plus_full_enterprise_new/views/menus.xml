@@ -1,0 +1,18 @@
+<odoo>
+    <record id="action_hr_shift" model="ir.actions.act_window">
+        <field name="name">Shifts</field>
+        <field name="res_model">hr.shift</field>
+        <field name="view_mode">tree,form,kanban,calendar</field>
+    </record>
+
+    <record id="action_hr_shift_history" model="ir.actions.act_window">
+        <field name="name">Shift History</field>
+        <field name="res_model">hr.shift.history</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_hr_schedule_root" name="Employee Schedule" parent="hr.menu_hr_root"/>
+    <menuitem id="menu_hr_shift" name="Shifts" parent="menu_hr_schedule_root" action="action_hr_shift"/>
+    <menuitem id="menu_hr_shift_history" name="Shift History" parent="menu_hr_schedule_root" action="action_hr_shift_history"/>
+    <menuitem id="menu_hr_shift_dashboard" name="Schedule Dashboard" parent="menu_hr_schedule_root" action="action_hr_shift"/>
+</odoo>

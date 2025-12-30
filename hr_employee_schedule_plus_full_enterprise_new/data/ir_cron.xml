@@ -1,0 +1,28 @@
+<odoo>
+    <record id="ir_cron_auto_assign_shift" model="ir.cron">
+        <field name="name">Auto Assign Weekly Shift</field>
+        <field name="model_id" ref="hr.model_hr_employee"/>
+        <field name="state">code</field>
+        <field name="code">model.search([])._cron_auto_assign_shift()</field>
+        <field name="interval_type">weeks</field>
+        <field name="interval_number">1</field>
+        <field name="numbercall">-1</field>
+        <field name="active">True</field>
+    </record>
+
+    <data noupdate="1">
+
+        <record id="cron_update_weekly_shift" model="ir.cron">
+            <field name="name">Update Shift Mingguan</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_update_weekly_shift()</field>
+
+            <!-- Schedule: Hari Minggu jam 23:00 -->
+            <field name="interval_type">weeks</field>
+            <field name="interval_number">1</field>
+            <field name="nextcall">2025-01-05 23:00:00</field>
+        </record>
+
+    </data>
+</odoo>

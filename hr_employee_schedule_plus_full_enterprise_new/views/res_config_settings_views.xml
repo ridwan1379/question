@@ -1,0 +1,21 @@
+<odoo>
+    <record id="res_config_settings_view_form_shift" model="ir.ui.view">
+        <field name="name">res.config.settings.form.shift</field>
+        <field name="model">res.config.settings</field>
+
+        <!-- ID yang benar di Odoo 13 Community -->
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('o_settings_container')]/div" position="inside">
+                <div class="app_settings_block" data-menu-xmlid="hr_employee_schedule_plus.menu_hr_schedule_root">
+                    <h2>Employee Schedule</h2>
+                    <div class="row">
+                        <field name="auto_assign_shift"/>
+                        <field name="reminder_days"/>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

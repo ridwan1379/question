@@ -1,0 +1,32 @@
+<odoo>
+    <record id="view_hr_shift_history_tree" model="ir.ui.view">
+        <field name="name">hr.shift.history.tree</field>
+        <field name="model">hr.shift.history</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id"/>
+                <field name="shift_id"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hr_shift_history_form" model="ir.ui.view">
+        <field name="name">hr.shift.history.form</field>
+        <field name="model">hr.shift.history</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="employee_id"/>
+                        <field name="shift_id"/>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="note"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

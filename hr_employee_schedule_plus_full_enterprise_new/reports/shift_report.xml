@@ -1,0 +1,4 @@
+<odoo>
+  <report id="report_shift" model="hr.employee" string="Shift Report" report_type="qweb-pdf"
+          name="hr_employee_schedule_plus.shift_report" file="hr_employee_schedule_plus.shift_report"/>
+</odoo>

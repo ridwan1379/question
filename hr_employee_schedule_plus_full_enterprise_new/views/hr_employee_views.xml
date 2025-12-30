@@ -1,0 +1,68 @@
+<odoo>
+    <record id="view_hr_employee_form_inherit_schedule" model="ir.ui.view">
+        <field name="name">hr.employee.form.schedule</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Schedule">
+                    <group>
+                        <field name="is_scheduled"/>
+                        <field name="shift_type"/>
+                        <field name="current_shift_id"/>
+                        <field name="shift_ids" widget="many2many_tags"/>
+                    </group>
+                    <group>
+                        <field name="shift_conflict" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="shift_history_ids"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_wizard_bulk_assign_shift" model="ir.actions.act_window">
+        <field name="name">Bulk Assign Shift</field>
+        <field name="res_model">wizard.bulk.assign.shift</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="view_employee_form_inherit_schedule" model="ir.ui.view">
+        <field name="name">hr.employee.form.schedule.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+
+        <field name="arch" type="xml">
+
+            <!-- Tambahkan checkbox tepat di bawah Manager (parent_id) -->
+            <xpath expr="//field[@name='parent_id']" position="after">
+                <field name="is_scheduled"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_employee_form_cuti" model="ir.ui.view">
+        <field name="name">hr.employee.form.cuti.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Tambahkan Tab Baru -->
+            <notebook position="inside">
+                <page string="Leave / Cuti">
+                    <group>
+                        <field name="cuti_total"/>
+                        <field name="cuti_terpakai"/>
+                        <field name="cuti_sisa" readonly="1"/>
+                    </group>
+                </page>
+            </notebook>
+
+        </field>
+    </record>
+    
+</odoo>
